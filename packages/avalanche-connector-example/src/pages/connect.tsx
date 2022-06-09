@@ -1,14 +1,18 @@
 import { useWeb3ConnectionContext } from '../context/web3Connection.context';
 import styled from 'styled-components';
 import { AVALANCHE_NOT_INSTALLED_ERROR } from '@avalabs/avalanche-connector';
+import logo from '../images/icon-192.png';
 
 const ConnectButton = styled.button`
+  display: flex;
+  align-items: center;
   background: transparent;
   border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
+  border: 2px solid black;
+  color: black;
   margin: 0 1em;
   padding: 0.25em 1em;
+  cursor: pointer;
 `;
 
 export function Connect() {
@@ -39,7 +43,8 @@ export function Connect() {
   if (!isActive) {
     return (
       <ConnectButton onClick={() => connector.activate()}>
-        Connect Avalanche
+        <img height={20} src={logo} alt="logo" />
+        <span style={{ marginLeft: '5px' }}>Connect Avalanche</span>
       </ConnectButton>
     );
   }
