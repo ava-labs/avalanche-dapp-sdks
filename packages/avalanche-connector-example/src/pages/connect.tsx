@@ -26,6 +26,7 @@ export function Connect() {
         <h1>
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://chrome.google.com/webstore/detail/core/agoakfejjabomempkjlepdflaleeobhb?hl=en&authuser=1"
           >
             Here
