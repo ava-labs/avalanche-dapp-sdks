@@ -23,6 +23,5 @@
     "rollup-plugin-delete": "2.0.0",
     "rollup-plugin-typescript2": "0.30.0",
     "ttypescript": "1.5.12"
-  },
-  "dependencies": {}
+  }
 }
