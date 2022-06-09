@@ -1,0 +1,38 @@
+name: Release-Alpha
+
+on:
+  push:
+    branches:
+      - alpha-release
+
+jobs:
+  Release:
+    name: release
+    if: "!startsWith(github.event.head_commit.message, 'Production Release v')"
+    runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      PUBLISH_EMAIL: ${{ secrets.PUBLISH_EMAIL }}
+      PUBLISH_USERNAME: ${{ secrets.PUBLISH_USERNAME }}
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version: ${{ matrix.node-version }}
+      - name: Create .npmrc
+        run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc
+      - run: git config --global user.email 'github-actions[bot]'
+      - run: git config --global user.name 'github-actions[bot]@users.noreply.github.com'
+      - name: Yarn install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Lerna Build Projects
+        run: lerna run build
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_BRANCH: alpha-release
+        run: lerna publish --yes --conventional-commits --conventional-prerelease --no-verify-access --exact --dist-tag alpha

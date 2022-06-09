@@ -1,0 +1,29 @@
+name: Test
+
+on: pull_request
+
+jobs:
+  Testing:
+    name: testing projects
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      PUBLISH_EMAIL: ${{ secrets.PUBLISH_EMAIL }}
+      PUBLISH_USERNAME: ${{ secrets.PUBLISH_USERNAME }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version: ${{ matrix.node-version }}
+      - name: Create .npmrc
+        run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc
+      - run: git config --global user.email 'github-actions[bot]'
+      - run: git config --global user.name 'github-actions[bot]@users.noreply.github.com'
+      - name: Yarn install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Run Jest
+        run: yarn test
