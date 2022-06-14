@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.0 (2022-06-14)
+
+### Features
+
+- **contacts:** adding contacts hook as a lib ([6ecddca](https://github.com/ava-labs/avalanche-dapp-sdks/commit/6ecddca30e07762e0b56e5a4eddda0e69d96d375))
+
 ## 0.0.1-alpha.1 (2022-06-09)
 
 **Note:** Version bump only for package avalanche-extension-dapp-example
