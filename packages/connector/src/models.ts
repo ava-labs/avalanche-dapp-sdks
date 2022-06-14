@@ -1,4 +1,4 @@
-import type { Provider } from "@web3-react/types";
+import type { Provider } from '@web3-react/types';
 
 export type AvalancheProvider = Provider & {
   isAvalanche?: boolean;
