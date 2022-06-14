@@ -5,11 +5,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.0.1-alpha.2 (2022-06-14)
 
-**Note:** Version bump only for package avalanche-dapp-sdks
+**Note:** Version bump only for package @avalabs/avalanche-contacts
 
 ## 0.0.1-alpha.1 (2022-06-09)
 
-**Note:** Version bump only for package avalanche-dapp-sdks
+**Note:** Version bump only for package @avalabs/avalanche-connector
 
 ## 0.0.1-alpha.0 (2022-06-09)
 
