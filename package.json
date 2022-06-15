@@ -3,7 +3,8 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "@web3-react/core": "8.0.17-beta.0"
+    "@web3-react/core": "8.0.17-beta.0",
+    "@avalabs/types": "^2.4.0"
   },
   "scripts": {
     "build": "lerna run build",

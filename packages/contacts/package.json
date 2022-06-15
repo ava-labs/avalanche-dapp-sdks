@@ -5,9 +5,6 @@
   "main": "dist/index.js",
   "private": false,
   "typings": "dist/index.d.ts",
-  "publishConfig": {
-    "access": "restricted"
-  },
   "scripts": {
     "start": "rollup -c --watch",
     "build": "rollup -c",
@@ -24,7 +21,5 @@
     "rollup-plugin-typescript2": "0.30.0",
     "ttypescript": "1.5.12"
   },
-  "dependencies": {
-    "@avalabs/types": "^2.4.0-alpha.52"
-  }
+  "dependencies": {}
 }
