@@ -19,10 +19,10 @@
     jsonpointer "^5.0.0"
     leven "^3.1.0"
 
-"@avalabs/types@^2.4.0-alpha.52":
-  version "2.4.0-alpha.52"
-  resolved "https://registry.yarnpkg.com/@avalabs/types/-/types-2.4.0-alpha.52.tgz#806aa293d09b2c6d7cdb6c398683716492c81914"
-  integrity sha512-el4Ku5ngFUWvfdgcqfegBE6z1A8BC2Y7CFbvAJ40t5P6XJOhfeOwBC78CQWYsVR4DGnNDaNnOcZb4kNnTnOhdw==
+"@avalabs/types@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@avalabs/types/-/types-2.4.0.tgz#6f31535557c8e87d7cb431d6ad1a05def8a6a213"
+  integrity sha512-Q6oZSDcpLcaue3AK/owTMJdS+Q/Ay4z8tcvMYl/Qe3nb9aA21NTlSS+PkuJDi94w9nGTPJQ2Zadn0XioQnTAGw==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.0", "@babel/code-frame@^7.16.7", "@babel/code-frame@^7.8.3":
   version "7.16.7"

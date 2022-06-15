@@ -5,9 +5,6 @@
   "main": "dist/index.js",
   "private": false,
   "typings": "dist/index.d.ts",
-  "publishConfig": {
-    "access": "restricted"
-  },
   "scripts": {
     "start": "rollup -c --watch",
     "build": "rollup -c",

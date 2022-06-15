@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
-import type { AvalancheProvider } from '@avalabs/avalanche-connector';
-import type { Contact } from '@avalabs/types';
+import { AvalancheProvider } from '@avalabs/avalanche-connector';
+import { Contact } from '@avalabs/types';
 
 type getContactsResult = { result: Contact[] };
 

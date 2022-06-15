@@ -1,5 +1,5 @@
 import { detectAvalancheProvider } from './detectAvalanche';
-import type {
+import {
   Actions,
   AddEthereumChainParameter,
   ProviderConnectInfo,
