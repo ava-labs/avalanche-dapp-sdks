@@ -1,6 +1,6 @@
 {
   "name": "@avalabs/avalanche-contacts",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "license": "MIT",
   "main": "dist/index.js",
   "private": false,
@@ -20,6 +20,5 @@
     "rollup-plugin-delete": "2.0.0",
     "rollup-plugin-typescript2": "0.30.0",
     "ttypescript": "1.5.12"
-  },
-  "dependencies": {}
+  }
 }
