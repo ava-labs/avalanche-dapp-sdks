@@ -1,17 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { Web3ConnectionContextProvider } from "./context/web3Connection.context";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { Web3ConnectionContextProvider } from './context/web3Connection.context';
+import { NetworksContextProvider } from './context/networks.context';
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <Web3ConnectionContextProvider>
-      <App />
+      <NetworksContextProvider>
+        <App />
+      </NetworksContextProvider>
     </Web3ConnectionContextProvider>
   </React.StrictMode>
 );

@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import styled from 'styled-components';
 import logo from './images/icon-192.png';
+import { Networks } from './pages/networks';
 
 const Logo = styled('img')`
   height: 30px;
@@ -46,6 +47,7 @@ function App() {
           </Toolbar>
         </Container>
       </AppBar>
+      <Networks />
     </div>
   );
 }
