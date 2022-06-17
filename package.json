@@ -3,8 +3,12 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
+    "@avalabs/types": "^2.4.0",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.4",
+    "@mui/styled-engine-sc": "^5.8.0",
     "@web3-react/core": "8.0.17-beta.0",
-    "@avalabs/types": "^2.4.0"
+    "styled-components": "^5.3.5"
   },
   "scripts": {
     "build": "lerna run build",

@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@rollup/plugin-json": "^4.1.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",

@@ -2,17 +2,14 @@ import { useWeb3ConnectionContext } from '../context/web3Connection.context';
 import styled from 'styled-components';
 import { AVALANCHE_NOT_INSTALLED_ERROR } from '@avalabs/avalanche-connector';
 import logo from '../images/icon-192.png';
+import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
+import Chip from '@mui/material/Chip';
+import { useMemo } from 'react';
 
-const ConnectButton = styled.button`
-  display: flex;
-  align-items: center;
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid black;
-  color: black;
-  margin: 0 1em;
-  padding: 0.25em 1em;
-  cursor: pointer;
+const ConnectButton = styled(Button)`
+  border: solid 1px white;
+  color: white;
 `;
 
 export function Connect() {
@@ -20,6 +17,13 @@ export function Connect() {
     useWeb3ConnectionContext();
   const isActive = useIsActive();
   const activeAccount = useAccount();
+
+  const account = useMemo(() => {
+    const chars = activeAccount?.split('');
+    return `${chars?.slice(0, 4).join('')}...${chars
+      ?.slice(chars.length - 4)
+      .join('')}`;
+  }, [activeAccount]);
 
   const error = useError();
 
@@ -42,12 +46,26 @@ export function Connect() {
 
   if (!isActive) {
     return (
-      <ConnectButton onClick={() => connector.activate()}>
+      <ConnectButton
+        onClick={() => connector.activate()}
+        sx={{ border: 'solid 1px white', color: 'white' }}
+      >
         <img height={20} src={logo} alt="logo" />
         <span style={{ marginLeft: '5px' }}>Connect Avalanche</span>
       </ConnectButton>
     );
   }
 
-  return <>connected: {activeAccount}</>;
+  return (
+    <Chip
+      avatar={
+        <Avatar
+          alt="Avalanche"
+          src="https://logowik.com/content/uploads/images/avalanche-coin-avax8592.jpg"
+        />
+      }
+      label={account}
+      variant="outlined"
+    />
+  );
 }
