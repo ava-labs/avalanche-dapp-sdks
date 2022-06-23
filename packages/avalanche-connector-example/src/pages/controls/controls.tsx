@@ -1,8 +1,6 @@
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
-import ListItemText from '@mui/material/ListItemText';
 import { useNetworksContext } from '../../context/networks.context';
 import { EthSign } from './ethSign';
 import { SignMessage } from './signMessage';

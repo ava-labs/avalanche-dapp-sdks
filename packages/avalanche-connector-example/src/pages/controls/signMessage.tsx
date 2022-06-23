@@ -11,7 +11,7 @@ export function SignMessage() {
     .toString('hex')}`;
 
   async function signMessage() {
-    const signResult = await connector.provider?.request({
+    await connector.provider?.request({
       method: 'personal_sign',
       params: [msg, activeAccount, 'Example password'],
     });
