@@ -8,6 +8,8 @@ import Box from '@mui/material/Box';
 import styled from 'styled-components';
 import logo from './images/icon-192.png';
 import { Networks } from './pages/networks';
+import { useNetworksContext } from './context/networks.context';
+import { Controls } from './pages/controls/controls';
 
 const Logo = styled('img')`
   height: 30px;
@@ -16,6 +18,7 @@ const Logo = styled('img')`
 `;
 
 function App() {
+  const { selectedChain } = useNetworksContext();
   return (
     <div className="App">
       <AppBar position="static">
@@ -47,7 +50,10 @@ function App() {
           </Toolbar>
         </Container>
       </AppBar>
-      <Networks />
+      <Box sx={{ display: 'flex' }}>
+        <Networks />
+        {!!selectedChain ? <Controls /> : undefined}
+      </Box>
     </div>
   );
 }

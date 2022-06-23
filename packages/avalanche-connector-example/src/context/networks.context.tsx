@@ -1,15 +1,17 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useWeb3ConnectionContext } from './web3Connection.context';
 
 const NetworksContext = createContext<{
   networks?: any[];
   selectedNetworkId?: number;
   selectTestNetwork?(chainId: number): void;
+  selectedChain: any;
 }>({} as any);
 
 export function NetworksContextProvider({ children }: { children: any }) {
   const [networks, setNetworks] = useState<any[]>();
-  const { connector } = useWeb3ConnectionContext();
+  const { connector, useChainId } = useWeb3ConnectionContext();
+  const chainId = useChainId();
 
   useEffect(() => {
     fetch('https://glacier-api.avax.network/tokenlist')
@@ -26,11 +28,16 @@ export function NetworksContextProvider({ children }: { children: any }) {
     });
   }
 
+  const selectedChain = useMemo(() => {
+    return networks?.find((net) => net.chainId === chainId);
+  }, [chainId, networks]);
+
   return (
     <NetworksContext.Provider
       value={{
         networks,
         selectTestNetwork,
+        selectedChain,
       }}
     >
       {children}
