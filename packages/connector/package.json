@@ -1,6 +1,6 @@
 {
   "name": "@avalabs/avalanche-connector",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "license": "MIT",
   "main": "dist/index.js",
   "private": false,
@@ -10,6 +10,5 @@
     "build": "rollup -c",
     "build:prod": "rollup -c --environment BUILD:production",
     "lint": "eslint --fix -c ./.eslintrc.js \"src/**/*.ts*\""
-  },
-  "devDependencies": {}
+  }
 }

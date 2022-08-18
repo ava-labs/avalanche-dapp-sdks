@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.1-alpha.0 (2022-08-18)
+
+### Bug Fixes
+
+- **build:** node version compatibility ([60db5ff](https://github.com/ava-labs/avalanche-dapp-sdks/commit/60db5ff0bc3296c9ea54f24a58e756069d21e2cc))
+
 # [1.0.0](https://github.com/ava-labs/avalanche-dapp-sdks/compare/v0.0.1-alpha.2...v1.0.0) (2022-06-16)
 
 ### Bug Fixes
