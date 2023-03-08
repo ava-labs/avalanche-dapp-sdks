@@ -1,22 +1,32 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { initializeConnector, Web3ReactHooks } from '@web3-react/core';
-import { Avalanche } from '@avalabs/avalanche-connector';
+import { CoreWallet } from '@avalabs/web3-react-core-connector';
 
 const Web3ConnectionContext = createContext<
   {
-    connector: Avalanche;
+    connector: CoreWallet;
+    error?: Error;
   } & Web3ReactHooks
 >({} as any);
 
 export function Web3ConnectionContextProvider({ children }: { children: any }) {
+  const [error, setError] = useState<Error | undefined>();
   const [connector, hooks] = initializeConnector(
-    (actions) => new Avalanche(actions, true)
+    (actions) =>
+      new CoreWallet({
+        actions,
+        onError: (e: Error) => {
+          console.error('Core Connector error', e);
+          setError(e);
+        },
+      })
   );
 
   return (
     <Web3ConnectionContext.Provider
       value={{
         connector,
+        error,
         ...hooks,
       }}
     >

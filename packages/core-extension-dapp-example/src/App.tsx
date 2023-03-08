@@ -1,5 +1,5 @@
-import "./App.css";
-import { Connect } from "./pages/connect";
+import './App.css';
+import { Connect } from './pages/connect';
 
 function App() {
   return (

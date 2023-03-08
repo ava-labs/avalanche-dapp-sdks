@@ -4,6 +4,7 @@ import del from 'rollup-plugin-delete';
 import ttypescript from 'ttypescript';
 import typescript from 'rollup-plugin-typescript2';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   input: './index.ts',
   output: {
@@ -29,5 +30,4 @@ export default {
     json(),
     commonjs(),
   ],
-  external: ['ethers', 'big.js'],
 };

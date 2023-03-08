@@ -1,6 +1,6 @@
 import { useWeb3ConnectionContext } from '../context/web3Connection.context';
 import styled from 'styled-components';
-import { AVALANCHE_NOT_INSTALLED_ERROR } from '@avalabs/avalanche-connector';
+import { NoCoreWalletError } from '@avalabs/web3-react-core-connector';
 import logo from '../images/icon-192.png';
 
 const ConnectButton = styled.button`
@@ -16,14 +16,12 @@ const ConnectButton = styled.button`
 `;
 
 export function Connect() {
-  const { connector, useIsActive, useAccount, useError } =
+  const { connector, error, useIsActive, useAccount } =
     useWeb3ConnectionContext();
   const isActive = useIsActive();
   const activeAccount = useAccount();
 
-  const error = useError();
-
-  if (error?.message === AVALANCHE_NOT_INSTALLED_ERROR) {
+  if (error instanceof NoCoreWalletError) {
     return (
       <>
         Avalanche Extension is not present. Go install from app store

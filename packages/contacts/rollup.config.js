@@ -17,7 +17,7 @@ export default {
       typescript: ttypescript,
       tsconfig: 'tsconfig.json',
       tsconfigOverride: {
-        exclude: ['./test/**'],
+        exclude: ['*.test.*'],
         // index.ts is included here and not in tsconfig.ts so relative imports
         // are imported correctly by VS Code.
         include: ['src', 'index.ts'],

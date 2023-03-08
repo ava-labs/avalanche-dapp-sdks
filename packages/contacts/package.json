@@ -11,5 +11,8 @@
     "build:prod": "rollup -c --environment BUILD:production",
     "lint": "eslint --fix -c ./.eslintrc.js \"src/**/*.ts*\""
   },
+  "dependencies": {
+    "@avalabs/web3-react-core-connector": "1.0.0"
+  },
   "devDependencies": {}
 }
