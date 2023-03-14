@@ -33,5 +33,5 @@ To create a release:
 
 Make sure to run the getting started steps above, then:
 
-1. cd into the `/packages/avalanche-connector-example`
+1. cd into the `/packages/web3-react-dapp-example`
 2. `yarn start`

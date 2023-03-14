@@ -1,22 +1,20 @@
-# Getting Started with Avalanche Connector
+# Getting Started with Core web3-react connector
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 We then installed `@avalabs/avalanche-connector`. After that you can open `src -> context -> web3Connection.context.tsx`
 
-This is meant to be the simplest example as possible and thus only deals with connecting dApps to the Avalanche extension. If you
-are using a later version of `@web3-react/core` than `@web3-react/core@8.0.17-beta.0` you may want to look at the connector code directly
-and adjust to your version of `@web3-react/core` accordingly.
+This is meant to be the simplest example as possible and thus only deals with connecting dApps to the Core extension.
 
-## Connect to Avalanche Button
+## Connect to Core Button
 
-You can open `src -> pages -> connect.tsx` to see a VERY rudementary version of the checking for Avalanche connector. Again this code is based on the beta version and serves as an example.
+You can open `src -> pages -> connect.tsx` to see a VERY rudementary version of the checking for Core connector.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

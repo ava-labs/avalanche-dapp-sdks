@@ -1,4 +1,6 @@
-# Avalanche Contacts
+# Core Contacts
+
+**This API is experimental and is not publicly accessible.**
 
 Through our extension we have exposed contacts. These contacts are accesible through the
 provider and are stored securly in the extension. These contacts can be used to show a name

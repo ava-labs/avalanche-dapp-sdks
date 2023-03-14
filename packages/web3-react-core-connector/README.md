@@ -1,15 +1,15 @@
-# Avalanche Connector
+# Core extension web3-react Connector
 
-This is a connector for the upcoming release of `@web3-react/core`. This serves as an example of how to connect for versions older than `8.0.17-beta.0`. If you need help connecting to older versions feel free to reach out at `coreintegrations@avalabs.org`
+Core Extension connector for [web3-react](https://github.com/Uniswap/web3-react).
 
 ## Getting started
 
-There is a working example in this repo under the package `avalanche connector example`
+There is a working example in this repo under the package `web3-react-dapp-example`
 
 ```typescript
 import { createContext, useContext } from 'react';
 import { initializeConnector, Web3ReactHooks } from '@web3-react/core';
-import { Avalanche } from '@avalabs/avalanche-connector';
+import { CoreWallet } from '@avalabs/web3-react-core-connector';
 
 const Web3ConnectionContext = createContext<
   {
@@ -18,14 +18,23 @@ const Web3ConnectionContext = createContext<
 >({} as any);
 
 export function Web3ConnectionContextProvider({ children }: { children: any }) {
+  const [error, setError] = useState<Error | undefined>();
   const [connector, hooks] = initializeConnector(
-    (actions) => new Avalanche(actions, true)
+    (actions) =>
+      new CoreWallet({
+        actions,
+        onError: (e: Error) => {
+          console.error('Core Connector error', e);
+          setError(e);
+        },
+      })
   );
 
   return (
     <Web3ConnectionContext.Provider
       value={{
         connector,
+        error,
         ...hooks,
       }}
     >
@@ -49,6 +58,24 @@ export function useWeb3ConnectionContext() {
 import { useWeb3ConnectionContext } from 'your-path-here';
 
 export function YourFancyComponent() {
-  const { provider, hooks } = useWeb3ConnectionContext();
+  const { connector, useIsActive, useAccount } = useWeb3ConnectionContext();
+  const isActive = useIsActive();
+  const activeAccount = useAccount();
+
+  if (!isActive) {
+    return (
+      <button
+        onClick={() => connector.activate().catch((e) => console.error(e))}
+      >
+        Connect with Core
+      </button>
+    );
+  }
+
+  return (
+    <div>
+      <strong>Connected:</strong> {activeAccount}
+    </div>
+  );
 }
 ```
