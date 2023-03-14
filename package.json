@@ -36,7 +36,7 @@
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-delete": "2.0.0",
     "rollup-plugin-typescript2": "0.31.0",
-    "ttypescript": "1.5.12"
+    "ttypescript": "1.5.15"
   },
   "workspaces": [
     "packages/*"
@@ -46,8 +46,8 @@
     "*.{ts,tsx}": "eslint --cache --fix"
   },
   "volta": {
-    "node": "16.13.1",
-    "yarn": "1.22.17"
+    "node": "16.19.1",
+    "yarn": "1.22.19"
   },
   "resolutions": {
     "parse-path": "5.0.0",
