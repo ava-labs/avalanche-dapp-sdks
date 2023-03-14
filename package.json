@@ -1,7 +1,7 @@
 {
   "version": "0.0.0",
   "private": true,
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "dependencies": {
     "@avalabs/types": "2.4.0"
   },

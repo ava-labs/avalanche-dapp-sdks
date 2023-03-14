@@ -1,16 +1,22 @@
 {
   "name": "@avalabs/web3-react-core-connector",
-  "keywords": [
-    "web3-react",
-    "core-wallet"
-  ],
   "version": "1.1.0",
+  "description": "Core Extension connector for the web3-react library",
   "license": "BSD-3-Clause",
+  "homepage": "https://github.com/ava-labs/avalanche-dapp-sdks/tree/master/packages/web3-react-core-connector",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ava-labs/avalanche-dapp-sdks.git"
+  },
   "publishConfig": {
     "access": "public"
   },
   "files": [
     "dist/*"
+  ],
+  "keywords": [
+    "web3-react",
+    "core-wallet"
   ],
   "type": "commonjs",
   "types": "./dist/index.d.ts",

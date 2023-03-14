@@ -13,7 +13,7 @@ import { CoreWallet } from '@avalabs/web3-react-core-connector';
 
 const Web3ConnectionContext = createContext<
   {
-    connector: Avalanche;
+    connector: CoreWallet;
   } & Web3ReactHooks
 >({} as any);
 
