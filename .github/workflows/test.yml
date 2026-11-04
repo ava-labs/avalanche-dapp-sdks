@@ -2,8 +2,12 @@ name: Test
 
 on: pull_request
 
+permissions: {}
+
 jobs:
   Testing:
+    permissions:
+      contents: read
     name: testing projects
     runs-on: ubuntu-latest
     strategy:
@@ -15,6 +19,8 @@ jobs:
       PUBLISH_USERNAME: ${{ secrets.PUBLISH_USERNAME }}
     steps:
       - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           cache: yarn
